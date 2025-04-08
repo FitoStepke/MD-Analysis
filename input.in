@@ -1,0 +1,8 @@
+dcd1      /home/cstepke/hCx46_3Ca_rep0/500ns_Cx46-3Ca-rep0.dcd          
+rad       10
+pdb       /home/cstepke/hCx46_3Ca_rep0/hCx46_3Ca_cent.pdb
+upperZ    15
+lowerZ    -15
+ref       protein and backbone
+sel       water
+out       w3R0.out
