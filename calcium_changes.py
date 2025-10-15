@@ -1,4 +1,5 @@
-import os
+import MDAnalysis as mda
+import numpy as np
 
 def analyze_calcium_changes_with_out_limit(output_file, max_out_frames=100, min_out_to_ignore=100, min_valid_frames=100):
     """
@@ -151,3 +152,4 @@ if __name__ == "__main__":
 
     
    
+
