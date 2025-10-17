@@ -16,12 +16,12 @@ def analyze_trajectory(psf_file, dcd_file, output_file, max_distance):
 
     # New protein groups (ordered clockwise)
     protein_selections = {
-        "AB": "protein and (segid S5 or segid S6)",
-        "BC": "protein and (segid S4 or segid S11)",
-        "CD": "protein and (segid S3 or segid S9)",
-        "DE": "protein and (segid S1 or segid S10)",
-        "EF": "protein and (segid S8 or segid S12)",
-        "FA": "protein and (segid S2 or segid S13)",
+      "AB": "(protein and (segid S5 or segid S6)) or (protein and (segid S4 or segid S11))",
+        "BC": "(protein and (segid S4 or segid S11)) or (protein and (segid S3 or segid S9))",
+        "CD": "(protein and (segid S3 or segid S9)) or (protein and (segid S1 or segid S10))",
+        "DE": "(protein and (segid S1 or segid S10)) or (protein and (segid S8 or segid S12))",
+        "EF": "(protein and (segid S8 or segid S12)) or (protein and (segid S2 or segid S13))",
+        "FA": "(protein and (segid S2 or segid S13)) or (protein and (segid S5 or segid S6))",
     }
     protein_groups = {key: u.select_atoms(sel) for key, sel in protein_selections.items()}
 
@@ -54,3 +54,4 @@ if __name__ == "__main__":
     output_file = "calcium_site_simple.txt"
     max_distance = 5  # Change as needed
     analyze_trajectory(psf_file, dcd_file, output_file, max_distance)
+
